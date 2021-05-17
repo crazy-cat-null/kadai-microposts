@@ -165,4 +165,9 @@ class User extends Authenticatable
             'users' => $followers,
         ]);
     }
+    
+    public function loadRelationshipCounts()
+    {
+        $this->loadCount(['microposts', 'followings', 'followers']);
+    }
 }
